@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premio di studio Daniele Cotrufo | I.I.S. G.B. Pentasuglia</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        memorial: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            200: '#bcccdc',
+                            300: '#9fb3c8',
+                            400: '#829ab1',
+                            500: '#627d98',
+                            600: '#486581',
+                            700: '#334e68',
+                            800: '#243b53',
+                            900: '#102a43',
+                            950: '#0b1d30',
+                        },
+                        amber: {
+                            glow: '#f6d365',
+                            soft: '#fda085'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth subtle ambient starry background */
+        body {
+            background-color: #0b1d30;
+            color: #f0f4f8;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 20%, rgba(36, 59, 83, 0.8) 0%, rgba(11, 29, 48, 1) 85%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .glass-card-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card-hover:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(246, 211, 101, 0.3);
+            box-shadow: 0 16px 40px -10px rgba(246, 211, 101, 0.15);
+        }
+
+        .quote-glow {
+            text-shadow: 0 0 20px rgba(246, 211, 101, 0.3);
+        }
+
+        /* Physics Orbit Graphic Animation */
+        .orbit-ring {
+            border: 1px solid rgba(246, 211, 101, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: spin 35s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b1d30;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334e68;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #486581;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-amber-400 selection:text-memorial-950">
+
+    <!-- Subtle Physics Background Orbit Graphic -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden opacity-30 z-0">
+        <div class="orbit-ring w-[600px] h-[600px] border-dashed"></div>
+        <div class="orbit-ring w-[900px] h-[300px] -rotate-45"></div>
+        <div class="orbit-ring w-[400px] h-[800px] rotate-45"></div>
+        <div class="absolute top-1/4 left-1/2 w-2 h-2 bg-amber-300 rounded-full blur-[1px] shadow-[0_0_15px_#f6d365]"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-blue-300 rounded-full blur-[1px] shadow-[0_0_15px_#9fb3c8]"></div>
+    </div>
+
+    <!-- MAIN WRAPPER -->
+    <div class="relative z-10 flex-grow flex flex-col items-center justify-between px-4 py-8 sm:px-6 lg:px-8">
+
+        <!-- HEADER SECTION -->
+        <header class="w-full max-w-4xl text-center pt-4 pb-6 sm:pt-8 sm:pb-8">
+            <div class="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full bg-memorial-800/60 border border-memorial-700/50 mb-6 text-xs sm:text-sm text-memorial-200 tracking-wide">
+                <i class="fa-solid font-light fa-graduation-cap text-amber-300"></i>
+                <span>I.I.S. "G.B. Pentasuglia" &bull; Matera</span>
+            </div>
+
+            <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal text-white tracking-tight leading-tight mb-4">
+                In Memoria di <br class="hidden sm:inline"/>
+                <span class="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-100 to-amber-300">
+                    Ing. Daniele Cotrufo
+                </span>
+            </h1>
+
+            <p class="text-sm sm:text-base text-memorial-300 font-light max-w-xl mx-auto mb-6">
+                Studente del Liceo Scientifico Scienze Applicate (2011–2016)
+            </p>
+
+            <!-- Memory Quote -->
+            <div class="relative max-w-2xl mx-auto p-6 rounded-2xl glass-card border border-amber-400/20 my-4">
+                <i class="fa-solid fa-quote-left text-amber-300/30 text-3xl absolute top-3 left-4"></i>
+                <blockquote class="font-serif italic text-lg sm:text-xl text-amber-100 quote-glow relative z-10">
+                    "Anche la persona più piccola può cambiare il corso del futuro"
+                </blockquote>
+                <cite class="block text-right text-xs sm:text-sm text-memorial-300 mt-2 font-sans not-italic font-medium">
+                    — J.R.R. Tolkien
+                </cite>
+            </div>
+        </header>
+
+        <!-- MAIN 4 ACTION BUTTONS GRID SECTION -->
+        <main class="w-full max-w-4xl my-auto py-4">
+            <div class="text-center mb-8">
+                <h2 class="text-xs uppercase tracking-widest text-memorial-300 font-semibold mb-2">
+                    Documenti e Testimonianze
+                </h2>
+                <p class="text-sm text-memorial-400">
+                    Seleziona una voce per consultare i dettagli o scaricare il documento ufficiale
+                </p>
+            </div>
+
+            <!-- THE 4 REQUIRED BUTTONS GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                
+                <!-- BUTTON 1: Motivazione -->
+                <button onclick="openModal('motivazioni')" 
+                        class="group glass-card glass-card-hover p-6 rounded-2xl text-left flex items-start space-x-4 w-full focus:outline-none focus:ring-2 focus:ring-amber-400/50">
+                    <div class="p-3.5 rounded-xl bg-memorial-800/80 border border-memorial-700/60 text-amber-300 group-hover:bg-amber-400 group-hover:text-memorial-950 transition-colors duration-300 shrink-0">
+                        <i class="fa-solid fa-microscope text-2xl"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="text-xs font-semibold text-amber-300/90 uppercase tracking-wider">Delibera Ufficiale</span>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-medium text-white group-hover:text-amber-200 transition-colors leading-snug">
+                            Motivazione dell'intitolazione del laboratorio di Fisica
+                        </h3>
+                        <p class="text-xs text-memorial-300 mt-2 line-clamp-2">
+                            Valutazione della Giunta Comunale di Matera e Decreto dell'Ufficio Scolastico Regionale per la Basilicata.
+                        </p>
+                        <div class="mt-4 flex items-center text-xs font-medium text-amber-300 group-hover:translate-x-1 transition-transform">
+                            <span>Leggi documento</span>
+                            <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- BUTTON 2: Cerimonia -->
+                <button onclick="openModal('cerimonia')" 
+                        class="group glass-card glass-card-hover p-6 rounded-2xl text-left flex items-start space-x-4 w-full focus:outline-none focus:ring-2 focus:ring-amber-400/50">
+                    <div class="p-3.5 rounded-xl bg-memorial-800/80 border border-memorial-700/60 text-amber-300 group-hover:bg-amber-400 group-hover:text-memorial-950 transition-colors duration-300 shrink-0">
+                        <i class="fa-solid fa-heart-pulse text-2xl"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="text-xs font-semibold text-amber-300/90 uppercase tracking-wider">Ricordi & Discorsi</span>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-medium text-white group-hover:text-amber-200 transition-colors leading-snug">
+                            Cerimonia di Intitolazione
+                        </h3>
+                        <p class="text-xs text-memorial-300 mt-2 line-clamp-2">
+                            Il ricordo dei docenti, il toccante intervento della mamma Mercedes e la rassegna stampa dell'evento.
+                        </p>
+                        <div class="mt-4 flex items-center text-xs font-medium text-amber-300 group-hover:translate-x-1 transition-transform">
+                            <span>Leggi i ricordi</span>
+                            <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- BUTTON 3: Premio di studio -->
+                <button onclick="openModal('premio')" 
+                        class="group glass-card glass-card-hover p-6 rounded-2xl text-left flex items-start space-x-4 w-full focus:outline-none focus:ring-2 focus:ring-amber-400/50">
+                    <div class="p-3.5 rounded-xl bg-memorial-800/80 border border-memorial-700/60 text-amber-300 group-hover:bg-amber-400 group-hover:text-memorial-950 transition-colors duration-300 shrink-0">
+                        <i class="fa-solid fa-award text-2xl"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="text-xs font-semibold text-amber-300/90 uppercase tracking-wider">Bando ufficiale</span>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-medium text-white group-hover:text-amber-200 transition-colors leading-snug">
+                            Premio di studio
+                        </h3>
+                        <p class="text-xs text-memorial-300 mt-2 line-clamp-2">
+                            Regolamento, finalità, importo e criteri di selezione per gli studenti del Liceo Pentasuglia.
+                        </p>
+                        <div class="mt-4 flex items-center text-xs font-medium text-amber-300 group-hover:translate-x-1 transition-transform">
+                            <span>Consulta il bando</span>
+                            <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- BUTTON 4: Annuario -->
+                <button onclick="openModal('annuario')" 
+                        class="group glass-card glass-card-hover p-6 rounded-2xl text-left flex items-start space-x-4 w-full focus:outline-none focus:ring-2 focus:ring-amber-400/50">
+                    <div class="p-3.5 rounded-xl bg-memorial-800/80 border border-memorial-700/60 text-amber-300 group-hover:bg-amber-400 group-hover:text-memorial-950 transition-colors duration-300 shrink-0">
+                        <i class="fa-solid fa-book-bookmark text-2xl"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="text-xs font-semibold text-amber-300/90 uppercase tracking-wider">Albo dei Vincitori</span>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-medium text-white group-hover:text-amber-200 transition-colors leading-snug">
+                            Annuario
+                        </h3>
+                        <p class="text-xs text-memorial-300 mt-2 line-clamp-2">
+                            L'albo d'oro degli studenti premiati anno per anno e la memoria viva nel tempo.
+                        </p>
+                        <div class="mt-4 flex items-center text-xs font-medium text-amber-300 group-hover:translate-x-1 transition-transform">
+                            <span>Visualizza annuario</span>
+                            <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </div>
+                    </div>
+                </button>
+
+            </div>
+        </main>
+
+        <!-- FOOTER SECTION -->
+        <footer class="w-full max-w-4xl text-center py-6 border-t border-memorial-800/50 mt-8">
+            <p class="text-xs text-memorial-400 font-light">
+                Iniziativa promossa dalla Famiglia Cotrufo in collaborazione con l'I.I.S. "G.B. Pentasuglia" di Matera.
+            </p>
+            <p class="text-[11px] text-memorial-500 mt-1">
+                "Sapere, accuratezza, senso di responsabilità e rispetto delle regole."
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- MODAL CONTAINER FOR CONTENT & PDF VIEWER -->
+    <div id="pdfModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6 bg-memorial-950/80 backdrop-blur-md transition-opacity duration-300">
+        <div class="bg-memorial-900 border border-memorial-700/80 rounded-2xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden">
+            
+            <!-- Modal Header -->
+            <div class="px-6 py-4 bg-memorial-950/70 border-b border-memorial-800 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div id="modalIcon" class="w-8 h-8 rounded-lg bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-300 text-sm">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div>
+                        <h3 id="modalTitle" class="text-base sm:text-lg font-semibold text-white">Titolo Documento</h3>
+                        <span id="modalFilename" class="text-xs font-mono text-memorial-400">file.pdf</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-2">
+                    <a id="modalDownloadBtn" download href="#" class="px-3 py-1.5 rounded-lg bg-memorial-800 hover:bg-memorial-700 border border-memorial-600 text-xs text-memorial-200 transition-colors flex items-center space-x-1.5" title="Scarica File Originale">
+                        <i class="fa-solid fa-download"></i>
+                        <span class="hidden sm:inline">Scarica PDF</span>
+                    </a>
+                    <button onclick="closeModal()" class="w-8 h-8 rounded-lg bg-memorial-800 hover:bg-memorial-700 text-memorial-300 hover:text-white flex items-center justify-center transition-colors">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal Body Content -->
+            <div id="modalContent" class="flex-1 overflow-y-auto p-6 text-memorial-100 text-sm leading-relaxed space-y-4">
+                <!-- Dynamic text content injected here -->
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="px-6 py-3 bg-memorial-950/60 border-t border-memorial-800/60 flex items-center justify-between text-xs text-memorial-400">
+                <span>Premio di Studio "Daniele Cotrufo"</span>
+                <button onclick="closeModal()" class="text-amber-300 hover:underline">Chiudi finestra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR MODAL INTERACTION AND DOCUMENT CONTENT -->
+    <script>
+        // Content extracted and compiled for rich display in the modal viewer
+        const documentData = {
+            motivazioni: {
+                title: "Motivazione dell'intitolazione del laboratorio di Fisica",
+                filename: "motivazioni.pdf",
+                icon: "fa-microscope",
+                html: `
+                    <div class="space-y-6">
+                        <div class="p-4 rounded-xl bg-memorial-800/40 border border-memorial-700/50">
+                            <h4 class="font-serif text-lg text-amber-200 mb-2">Estratto dalla Delibera di Intitolazione</h4>
+                            <blockquote class="italic text-memorial-200 border-l-2 border-amber-300 pl-3 py-1">
+                                "La sua vita è stata una continua ricerca dell'eccellenza, sia in ambito accademico che professionale. Con il suo impegno, la sua dedizione e il suo straordinario talento, il garbo e l'umiltà che lo contraddistinguevano, ha lasciato una traccia indelebile nel cuore di tutti coloro che lo hanno conosciuto. È doveroso tributargli questo atto di affetto e di stima profonda, dedicandogli l'Aula di Fisica..."
+                            </blockquote>
+                        </div>
+
+                        <div class="space-y-3">
+                            <h5 class="font-semibold text-white text-base">Il percorso scolastico e accademico di Daniele</h5>
+                            <ul class="space-y-2 list-disc list-inside text-memorial-200">
+                                /><strong class="text-white">Liceo Scientifico Scienze Applicate:</strong> Diploma conseguito nel 2015/2016 con 100 e Lode. Partecipazione per merito alle Olimpiadi Italiane della Fisica (2015 e 2016) e alla Scuola Estiva Nazionale sulla Fisica Moderna (Università di Udine).
+                                /><strong class="text-white">Politecnico di Torino:</strong> Laurea Triennale in Ingegneria Biomedica (2019) ed ammissione al percorso d'eccellenza <em>"Giovani Talenti"</em>, con mobilità Erasmus presso la Universitat Politècnica de Catalunya a Barcellona.
+                                /><strong class="text-white">Laurea Magistrale:</strong> Ingegneria Meccatronica, Robotica e Automazione (2022) conclusa col massimo dei voti.
+                                /><strong class="text-white">Carriera Professionale:</strong> Selezionato per il <em>Ferrero Industrial & Supply Chain Graduate Program</em>, dove lavorava con il ruolo di <em>Plant Operating Planning Specialist</em>.
+                            </ul>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-memorial-950/50 border border-memorial-800 text-xs font-mono text-memorial-400 space-y-1">
+                            <p><strong class="text-memorial-300">Riferimenti Istituzionali:</strong></p>
+                            <p>&bull; Deliberazione Commissariale N. 155/2025 del Comune di Matera (08/04/2025)</p>
+                            <p>&bull; Decreto Ufficio Scolastico Regionale per la Basilicata prot. 0000060 (09/07/2025)</p>
+                            <p>&bull; Parere favorevole Prefettura di Matera F.n. 2974/25</p>
+                        </div>
+                    </div>
+                `
+            },
+            cerimonia: {
+                title: "Cerimonia di Intitolazione dell'Aula di Fisica",
+                filename: "cerimonia.pdf",
+                icon: "fa-heart-pulse",
+                html: `
+                    <div class="space-y-6">
+                        <!-- Intitolazione Info Card -->
+                        <div class="p-4 rounded-xl bg-amber-400/5 border border-amber-400/20 text-center">
+                            <h4 class="font-serif text-lg text-amber-200">Cerimonia Svoltasi Venerdì 24 Ottobre 2025</h4>
+                            <p class="text-xs text-memorial-300 mt-1">Aula Magna - I.I.S. "G.B. Pentasuglia" Matera</p>
+                        </div>
+
+                        <!-- Ricordo della Prof.ssa -->
+                        <div class="p-4 rounded-xl bg-memorial-800/40 border border-memorial-700/50">
+                            <h5 class="font-medium text-amber-300 text-sm mb-2"><i class="fa-solid fa-pen-nib mr-2"></i>Prof.ssa Adriana Mele (Docente di Matematica)</h5>
+                            <p class="italic text-memorial-200">
+                                "Io di Daniele mi ricordo tutto, perfettamente. Il suo sorriso, lo sguardo brillante e curioso. Quel suo modo di fare scanzonato e rispettoso insieme. La fenomenale capacità di gestire il suo essere speciale con una consapevolezza del tutto scevra da superbia che mi sento di definire grazia... Per me Daniele è ancora lì, in quell'aula di questo liceo, calda, sicura e luminosa, in piedi vicino alla lavagna con il gessetto in mano."
+                            </p>
+                        </div>
+
+                        <!-- Discorso Mamma -->
+                        <div class="p-4 rounded-xl bg-memorial-800/40 border border-memorial-700/50 space-y-3">
+                            <h5 class="font-medium text-amber-300 text-sm"><i class="fa-solid fa-heart mr-2"></i>Mercedes Clemente (Mamma di Daniele)</h5>
+                            <p class="text-memorial-200">
+                                <em>"L'intitolazione dell'aula di fisica a Daniele non deve essere solo un omaggio al suo ricordo, ma il simbolo duraturo del suo lascito... I valori che ci ha insegnato:"</em>
+                            </p>
+                            <ol class="list-decimal list-inside space-y-2 pl-2 text-memorial-200">
+                                /><strong class="text-white">La consapevolezza del proprio sapere:</strong> Per Daniele "sapere" non era voto, ma uno stile di vita e passione autentica.
+                                /><strong class="text-white">Accuratezza e senso di responsabilità:</strong> Ciò che faceva, lo faceva bene, pensando anche al beneficio dei colleghi e degli operai in azienda.
+                                /><strong class="text-white">Rispetto delle regole e senso della giustizia:</strong> Mai cercate scorciatoie o sotterfugi, affrontando con tenacia anche i momenti complessi.
+                            </ol>
+                        </div>
+
+                        <!-- Rassegna Stampa -->
+                        <div class="border-t border-memorial-800 pt-4">
+                            <h5 class="text-xs uppercase tracking-wider text-memorial-400 font-semibold mb-3">Rassegna Stampa</h5>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                                <div class="p-3 bg-memorial-950 rounded-lg border border-memorial-800">
+                                    <strong class="text-white block mb-1">ANSA Basilicata</strong>
+                                    <p class="text-memorial-300">"Al Pentasuglia l'aula di fisica intitolata a Daniele Cotrufo."</p>
+                                </div>
+                                <div class="p-3 bg-memorial-950 rounded-lg border border-memorial-800">
+                                    <strong class="text-white block mb-1">SassiLive</strong>
+                                    <p class="text-memorial-300">"Report e foto della cerimonia con la comunità scolastica ed istituzionale."</p>
+                                </div>
+                                <div class="p-3 bg-memorial-950 rounded-lg border border-memorial-800">
+                                    <strong class="text-white block mb-1">GiornaleMio</strong>
+                                    <p class="text-memorial-300">"Tanto amore per la ricerca in quell'aula intitolata a Daniele."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            premio: {
+                title: "Premio di Studio Daniele Cotrufo",
+                filename: "PremioStudio.pdf",
+                icon: "fa-award",
+                html: `
+                    <div class="space-y-5">
+                        <div class="p-4 rounded-xl bg-memorial-800/40 border border-memorial-700/50">
+                            <h4 class="font-serif text-lg text-amber-200 mb-2">I Edizione — Anno Scolastico 2026/2027</h4>
+                            <p class="text-memorial-200">
+                                Il Premio nasce per stimolare le studentesse e gli studenti delle classi quinte a coltivare la conoscenza non per la sola valutazione scolastica, ma per il piacere di capire e di far cresere la propria comunità.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl bg-memorial-950/60 border border-memorial-800">
+                                <span class="text-xs text-amber-300 uppercase font-semibold">Art. 2 — Destinatari</span>
+                                <p class="text-white font-medium mt-1">Due studenti dell'I.I.S. G.B. Pentasuglia</p>
+                                <p class="text-xs text-memorial-300 mt-1">Frequentanti la classe quinta del Liceo Scientifico Scienze Applicate.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-memorial-950/60 border border-memorial-800">
+                                <span class="text-xs text-amber-300 uppercase font-semibold">Art. 3 — Importo</span>
+                                <p class="text-white font-medium text-lg mt-1">300 € per ciascun studente</p>
+                                <p class="text-xs text-memorial-300 mt-1">Assegnati a 2 studenti meritevoli ogni anno.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-memorial-800/30 border border-memorial-700/40 space-y-2">
+                            <h5 class="font-semibold text-white text-sm">Art. 4 — Criteri di Valutazione</h5>
+                            <ul class="list-disc list-inside text-memorial-200 space-y-1">
+                                /><strong class="text-white">Merito scolastico:</strong> Media aritmetica nei voti di <em>Matematica, Fisica, Scienze Naturali e Storia</em> nello scrutinio finale della classe quarta.
+                                /><strong class="text-white">Comportamento:</strong> Condotta corretta e assenza di sanzioni disciplinari.
+                                /><strong class="text-white">Modalità:</strong> Tutti gli studenti in possesso dei requisiti partecipano automaticamente senza bisogno di produrre domanda.
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            annuario: {
+                title: "Annuario Premio Daniele Cotrufo",
+                filename: "annuario.pdf",
+                icon: "fa-book-bookmark",
+                html: `
+                    <div class="space-y-6">
+                        <div class="text-center p-4">
+                            <p class="text-xs text-memorial-400 font-mono">I.I.S. "G.B. PENTASUGLIA" - MATERA</p>
+                            <h4 class="font-serif text-xl text-amber-200 mt-1">Albo dei Premiati</h4>
+                            <p class="text-xs text-memorial-300 italic mt-2">
+                                "Anche la persona più piccola può cambiare il corso del futuro"
+                            </p>
+                        </div>
+
+                        <!-- Table of yearly winners -->
+                        <div class="overflow-hidden rounded-xl border border-memorial-700/60 bg-memorial-950/60">
+                            <table class="w-full text-left text-xs sm:text-sm">
+                                <thead class="bg-memorial-800/80 text-amber-300 uppercase font-mono text-[11px]">
+                                    <tr>
+                                        <th class="py-3 px-4">Anno Scolastico</th>
+                                        <th class="py-3 px-4">Studenti Premiati</th>
+                                        <th class="py-3 px-4 text-right">Stato</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-memorial-800/60 text-memorial-200">
+                                    <tr class="bg-amber-400/5">
+                                        <td class="py-3.5 px-4 font-mono text-white font-medium">2026 - 2027</td>
+                                        <td class="py-3.5 px-4">
+                                            <span class="text-amber-200 font-medium">I Edizione del Premio</span><br/>
+                                            <span class="text-xs text-memorial-400">Studenti premiati alla conclusione dello scrutinio</span>
+                                        </td>
+                                        <td class="py-3.5 px-4 text-right">
+                                            <span class="px-2 py-1 rounded bg-amber-400/10 text-amber-300 border border-amber-400/30 text-[10px] font-semibold">EDIZIONE ATTIVA</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="opacity-60">
+                                        <td class="py-3 px-4 font-mono">2027 - 2028</td>
+                                        <td class="py-3 px-4">II Edizione</td>
+                                        <td class="py-3 px-4 text-right font-mono text-[11px] text-memorial-500">Futuro</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="text-xs text-center text-memorial-400 italic">
+                            L'annuario viene aggiornato annualmente a seguito della cerimonia di consegna ufficiale dei premi di studio.
+                        </p>
+                    </div>
+                `
+            }
+        };
+
+        function openModal(key) {
+            const data = documentData[key];
+            if (!data) return;
+
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalFilename').innerText = data.filename;
+            document.getElementById('modalContent').innerHTML = data.html;
+            document.getElementById('modalDownloadBtn').setAttribute('href', data.filename);
+            
+            // Set icon
+            const iconContainer = document.getElementById('modalIcon');
+            iconContainer.innerHTML = `<i class="fa-solid ${data.icon}"></i>`;
+
+            const modal = document.getElementById('pdfModal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('pdfModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Close on overlay click
+        document.getElementById('pdfModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+</body>
+</html>
